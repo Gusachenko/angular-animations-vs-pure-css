@@ -1,12 +1,16 @@
 <div class="main-wrapper" role="main">
 
 
-    <input type="button" value="Show Sidenav(Angular Animations)">
-    <input type="button" value="Show Sidenav(Pure CSS Animations)">
+    <div class="sidenav-buttons">
+        <h3>Sidenav's</h3>
+        <input type="button" value="<= Angular Animations" (click)="angularAnimationsSidenavComponent.toggle()">
+        <input type="button" value="Pure CSS Animations =>" (click)="pureCssAnimationsSidenavComponent.toggle()">
+    </div>
 
 
-    <angular-animations-sidenav></angular-animations-sidenav>
-    <pure-css-animations-sidenav></pure-css-animations-sidenav>
+
+    <angular-animations-sidenav #angularAnimationsSidenavComponent></angular-animations-sidenav>
+    <pure-css-animations-sidenav #pureCssAnimationsSidenavComponent></pure-css-animations-sidenav>
 
 
 </div>
