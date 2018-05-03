@@ -7,6 +7,7 @@ import { SidenavCommonBehaviour } from '../../interfaces/sidenav-common';
   templateUrl: './pure-css-animations-sidenav.component.html',
   styleUrls: ['./pure-css-animations-sidenav.component.scss'],
   host: {
+    class: 'sidenav-component',
     '[class.visible]': 'opened'
   }
 })
