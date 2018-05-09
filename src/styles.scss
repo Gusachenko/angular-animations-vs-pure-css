@@ -16,11 +16,134 @@ body {
   display: block;
   width: 190px;
   height: 100%;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
   .sidenav-wrapper {
     width: 100%;
     height: 100%;
     background: lightgray;
+
+    .preloader {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+
+      svg {
+        width: 100%;
+        height: 100%;
+        .stroke {
+          fill: #00ff0d;
+          fill-opacity: 0;
+          transform-origin: center;
+          stroke-linecap: round;
+          stroke: rgb(234, 0, 255);
+          stroke-width: 10%;
+          stroke-dasharray: 127;
+          stroke-dashoffset: 127;
+          animation: dash-offset 1.8s ease-in-out infinite, dash-rotate 0.8s linear infinite,
+            colorino 10s linear infinite;
+          transition: fill 0.4s ease-in-out, stroke 0.4s ease-in-out;
+          will-change: stroke-width, opacity;
+
+          &.done {
+            stroke-width: 0;
+            fill-opacity: 1;
+            animation: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes dash-offset {
+  0% {
+    stroke-dashoffset: 127;
+  }
+  50% {
+    stroke-dasharray: 100;
+  }
+  100% {
+    stroke-dasharray: 180;
+    stroke-dashoffset: -137;
+  }
+}
+
+@keyframes dash-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes colorino {
+  0% {
+    stroke: red;
+  }
+  5% {
+    stroke: #f95759;
+  }
+  10% {
+    stroke: #c8ff00;
+  }
+  15% {
+    stroke: #00f;
+  }
+  20% {
+    stroke: rgb(238, 255, 0);
+  }
+  25% {
+    stroke: #0080ff;
+  }
+  30% {
+    stroke: rgb(255, 0, 157);
+  }
+  35% {
+    stroke: rgb(21, 255, 0);
+  }
+  40% {
+    stroke: rgb(217, 255, 0);
+  }
+  45% {
+    stroke: rgb(0, 255, 13);
+  }
+  50% {
+    stroke: rgb(0, 217, 255);
+  }
+  55% {
+    stroke: rgb(255, 0, 0);
+  }
+  60% {
+    stroke: rgb(0, 255, 0);
+  }
+  65% {
+    stroke: rgb(255, 196, 0);
+  }
+  70% {
+    stroke: rgb(0, 195, 255);
+  }
+  75% {
+    stroke: rgb(0, 204, 255);
+  }
+  80% {
+    stroke: rgb(255, 0, 140);
+  }
+  85% {
+    stroke: rgb(60, 255, 0);
+  }
+  90% {
+    stroke: rgb(17, 0, 255);
+  }
+  95% {
+    stroke: rgb(111, 0, 255);
+  }
+  100% {
+    stroke: #00ff80;
   }
 }

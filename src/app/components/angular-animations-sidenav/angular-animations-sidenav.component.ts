@@ -9,7 +9,9 @@ import { SidenavCommonBehaviour } from '../../interfaces/sidenav-common';
   styleUrls: ['./angular-animations-sidenav.component.scss'],
   host: {
     class: 'sidenav-component',
-    '[@sidenavOpened]': 'opened'
+    '[@sidenavOpened]': 'opened',
+    '(@sidenavOpened.start)': 'animationStart($event)',
+    '(@sidenavOpened.done)': 'animationDone($event)'
   },
   animations: [
     trigger('sidenavOpened', [
@@ -31,6 +33,7 @@ import { SidenavCommonBehaviour } from '../../interfaces/sidenav-common';
 })
 export class AngularAnimationsSidenavComponent implements AfterViewInit, SidenavCommonBehaviour {
   opened = false;
+  isAnimationDone = false;
 
   toggle(isOpen: boolean = !this.opened): void {
     this.opened = isOpen;
@@ -42,6 +45,14 @@ export class AngularAnimationsSidenavComponent implements AfterViewInit, Sidenav
 
   close(): void {
     this.opened = false;
+  }
+
+  animationDone(event): void {
+    this.isAnimationDone = true;
+  }
+
+  animationStart(event): void {
+    this.isAnimationDone = false;
   }
 
   constructor() {}
