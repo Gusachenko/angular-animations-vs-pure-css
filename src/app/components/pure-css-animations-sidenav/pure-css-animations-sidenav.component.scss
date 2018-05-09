@@ -1,8 +1,9 @@
 :host {
   right: 0;
+  will-change: transform;
   transform: translateX(100%);
-  transition: transform .4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  &.visible{
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  &.visible {
     transform: translateX(0);
   }
 }

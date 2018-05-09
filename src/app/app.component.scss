@@ -1,12 +1,19 @@
-.main-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+:host {
+  position: relative;
+  display: block;
   height: 100%;
   width: 100%;
 
-  .sidenav-buttons {
-    text-align: center;
+  .main-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    .sidenav-buttons {
+      text-align: center;
+    }
   }
 }
