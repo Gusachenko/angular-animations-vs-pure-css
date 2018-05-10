@@ -44,8 +44,8 @@ body {
           stroke-width: 10%;
           stroke-dasharray: 127;
           stroke-dashoffset: 127;
-          animation: dash-offset 1.8s ease-in-out infinite, dash-rotate 0.8s linear infinite,
-            colorino 10s linear infinite;
+          animation: dash-offset .9s ease-in-out infinite, dash-rotate 0.8s linear infinite,
+            colorino 8s linear infinite;
           transition: fill 0.4s ease-in-out, stroke 0.4s ease-in-out;
           will-change: stroke-width, opacity;
 

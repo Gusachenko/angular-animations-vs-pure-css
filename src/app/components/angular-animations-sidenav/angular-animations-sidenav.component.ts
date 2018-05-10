@@ -27,7 +27,7 @@ import { SidenavCommonBehaviour } from '../../interfaces/sidenav-common';
           transform: 'translateX(-100%)'
         })
       ),
-      transition('false <=> true', animate('.4s cubic-bezier(0.165, 0.84, 0.44, 1)'))
+      transition('false <=> true', animate('.8s cubic-bezier(0.165, 0.84, 0.44, 1)'))
     ])
   ]
 })
