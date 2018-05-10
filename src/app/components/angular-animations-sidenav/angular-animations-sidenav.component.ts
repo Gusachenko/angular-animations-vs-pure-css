@@ -47,11 +47,11 @@ export class AngularAnimationsSidenavComponent implements AfterViewInit, Sidenav
     this.opened = false;
   }
 
-  animationDone(event): void {
+  animationDone(event?): void {
     this.isAnimationDone = true;
   }
 
-  animationStart(event): void {
+  animationStart(event?): void {
     this.isAnimationDone = false;
   }
 

@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, ElementRef } from '@angular/core';
 
 import { SidenavCommonBehaviour } from '../../interfaces/sidenav-common';
 
@@ -13,9 +13,13 @@ import { SidenavCommonBehaviour } from '../../interfaces/sidenav-common';
 })
 export class PureCssAnimationsSidenavComponent implements AfterViewInit, SidenavCommonBehaviour {
   opened = false;
+  isAnimationDone = false;
 
   toggle(isOpen: boolean = !this.opened): void {
     this.opened = isOpen;
+
+    //hack for detect transitionstart event, need to fix
+    this.animationStart();
   }
 
   open(): void {
@@ -26,7 +30,19 @@ export class PureCssAnimationsSidenavComponent implements AfterViewInit, Sidenav
     this.opened = false;
   }
 
-  constructor() {}
+  animationDone(event?): void {
+    this.isAnimationDone = true;
+  }
 
-  ngAfterViewInit() {}
+  animationStart(event?): void {
+    this.isAnimationDone = false;
+  }
+
+  constructor(private elementRef: ElementRef) {}
+
+  ngAfterViewInit() {
+    this.elementRef.nativeElement.addEventListener('transitionend', event => {
+      this.animationDone(event);
+    });
+  }
 }

@@ -5,6 +5,7 @@
         <input type="button" value="<= Angular Animations" (click)="angularAnimationsSidenavComponent.toggle()">
         <input type="button" value="Pure CSS Animations =>" (click)="pureCssAnimationsSidenavComponent.toggle()">
     </div>
+    <input type="button" value="All Animations" (click)="pureCssAnimationsSidenavComponent.toggle();angularAnimationsSidenavComponent.toggle()">
 
 </div>
 <angular-animations-sidenav #angularAnimationsSidenavComponent></angular-animations-sidenav>
