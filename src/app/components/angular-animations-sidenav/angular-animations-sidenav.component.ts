@@ -33,7 +33,7 @@ import { SidenavCommonBehaviour } from '../../interfaces/sidenav-common';
 })
 export class AngularAnimationsSidenavComponent implements AfterViewInit, SidenavCommonBehaviour {
   opened = false;
-  isAnimationDone = false;
+  isAnimationDone = true;
 
   toggle(isOpen: boolean = !this.opened): void {
     this.opened = isOpen;
